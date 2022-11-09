@@ -6,10 +6,10 @@ enum Complexity {
   hard,
 }
 
-enum Affordabilty {
+enum Affordability {
   affordable,
   pricey,
-  luxurous,
+  luxurious,
 }
 
 class Meal {
@@ -21,7 +21,7 @@ class Meal {
   final List<String> steps;
   final int duration;
   final Complexity complexity;
-  final Affordabilty affordability;
+  final Affordability affordability;
   final bool isGlutenFree;
   final bool isLactoseFree;
   final bool isVegan;
