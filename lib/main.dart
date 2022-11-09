@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import './categories_screen.dart';
+
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -12,29 +12,36 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'DeliMeals',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.pink,
+        colorScheme: const ColorScheme(
+            brightness: Brightness.light,
+            primary: Colors.amber,
+            onPrimary: Colors.white,
+            secondary: Colors.orange,
+            onSecondary: Colors.white,
+            error: Colors.red,
+            onError: Colors.white,
+            background: Colors.grey,
+            onBackground: Colors.white,
+            surface: Colors.pink,
+            onSurface: Colors.white),
+        canvasColor: const Color.fromRGBO(255, 254, 221, 1),
+        fontFamily: "Raleway",
+        textTheme: ThemeData.light().textTheme.copyWith(
+              bodyText1: const TextStyle(
+                color: Color.fromRGBO(20, 51, 51, 1),
+              ),
+              bodyText2: const TextStyle(
+                color: Color.fromRGBO(20, 51, 51, 1),
+              ),
+              headline1: const TextStyle(
+                fontSize: 20,
+                fontFamily: "RobotoCondensed",
+                fontWeight: FontWeight.bold,
+              ),
+            ),
       ),
-      home: const MyHomePage(title: 'DeliMeals'),
+      home: const CategoriesScreen(),
     );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-        ),
-        body: const Center(child: Text("Navigation Time!")));
   }
 }
