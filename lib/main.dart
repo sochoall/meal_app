@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import './category_meals_screen.dart';
-import './categories_screen.dart';
+import './screens/meal_detail_screen.dart';
+import './screens/category_meals_screen.dart';
+import './screens/categories_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -47,8 +48,22 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const CategoriesScreen(),
         CategoriesMealScreen.routeName: (context) =>
-            const CategoriesMealScreen()
+            const CategoriesMealScreen(),
+        MealDetailScreen.routeName: (context) => const MealDetailScreen(),
       },
+      //When no route is defined we can use onGenerateRoute to make it go a
+      //general screen
+      // onGenerateRoute: (settings) {
+      //   return MaterialPageRoute(
+      //       builder: (context) => const CategoriesScreen());
+      // },
+
+      //We use this when there's no page to redirect and tehre's no
+      //onGenerteRoute or route defined at all
+      // onUnknownRoute: (settings) {
+      //   return MaterialPageRoute(
+      //       builder: (context) => const CategoriesScreen());
+      // },
     );
   }
 }
